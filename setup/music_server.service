@@ -1,0 +1,13 @@
+[Unit]
+Description=Flask Music Server
+After=network.target
+
+[Service]
+User=pi
+Group=pi
+ExecStart=/usr/bin/python3 /home/pi/scavhunt/music_server.py
+WorkingDirectory=/home/pi/music_server
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

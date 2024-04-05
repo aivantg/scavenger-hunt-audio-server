@@ -1,0 +1,13 @@
+[Unit]
+Description=Restore ALSA mixer settings
+After=sound.target
+
+[Service]
+User=pi
+Group=pi
+Type=oneshot
+ExecStart=/usr/sbin/alsactl restore
+RemainAfterExit=true
+
+[Install]
+WantedBy=multi-user.target
